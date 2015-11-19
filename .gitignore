@@ -1,0 +1,17 @@
+/target
+/.settings
+/.project
+/.classpath
+/.springBeans
+/.idea
+/online-status-server
+/distribution.dir_IS_UNDEFINED
+
+*.class
+*.jar
+*.war
+*.ear
+online-status-server.iml
+
+.DS_Store
+bin/

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <dubbo:application name="bbs-service" />
+
+    <!-- zookeeper注册中心 -->
+    <dubbo:registry protocol="zookeeper" address="192.168.1.108:2181" />
+    <!-- 使用multicast广播注册中心暴露服务地址 -->
+    <!-- <dubbo:registry address="multicast://10.57.41.19:1234" /> -->
+    <dubbo:protocol name="dubbo" port="20880" />
+
+    <dubbo:service ref="BBSService"
+                   interface="cn.edu.sjtu.se.dclab.server.service.BBSService" />
+    <bean id="BBSService" class="cn.edu.sjtu.se.dclab.server.service.impl.BBSServiceImpl" />
+
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location">
+            <value>classpath:application.properties</value>
+        </property>
+    </bean>
+
+</beans>
