@@ -18,10 +18,4 @@
     <dubbo:service ref="BBSService"
                    interface="cn.edu.sjtu.se.dclab.server.service.BBSService" />
 
-    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="location">
-            <value>classpath:application.properties</value>
-        </property>
-    </bean>
-
 </beans>

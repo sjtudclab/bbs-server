@@ -10,13 +10,10 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring.version>3.2.3.RELEASE</spring.version>
-        <rabbitmq.client.version>3.5.3</rabbitmq.client.version>
-        <redis.client.version>1.2.1</redis.client.version>
         <mybatis.version>3.2.3</mybatis.version>
         <mybati.spring.version>1.2.1</mybati.spring.version>
         <mysql.connector.version>5.1.27</mysql.connector.version>
         <commons-dbcp.version>1.4</commons-dbcp.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <dependencies>
 
@@ -33,23 +30,6 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpcore</artifactId>
-            <version>4.2.3</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpmime</artifactId>
-            <version>4.2.3</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>1.1.1</version>
-        </dependency>
-        <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-core</artifactId>
             <version>1.1.1</version>
@@ -64,14 +44,6 @@
             <groupId>org.swinglabs</groupId>
             <artifactId>swingx</artifactId>
             <version>1.6.1</version>
-        </dependency>
-        <!--Redis -->
-        <dependency>
-            <groupId>redis.clients</groupId>
-            <artifactId>jedis</artifactId>
-            <version>2.4.2</version>
-            <type>jar</type>
-            <scope>compile</scope>
         </dependency>
         <!-- spring -->
         <dependency>
@@ -200,19 +172,6 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- rabbitmq client -->
-        <dependency>
-            <groupId>com.rabbitmq</groupId>
-            <artifactId>amqp-client</artifactId>
-            <version>${rabbitmq.client.version}</version>
-        </dependency>
-
-        <!-- redis client -->
-        <dependency>
-            <groupId>org.redisson</groupId>
-            <artifactId>redisson</artifactId>
-            <version>${redis.client.version}</version>
-        </dependency>
 
         <dependency>
             <groupId>org.mybatis</groupId>
