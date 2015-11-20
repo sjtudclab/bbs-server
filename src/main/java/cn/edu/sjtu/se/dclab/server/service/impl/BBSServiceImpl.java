@@ -9,49 +9,45 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 
-@Service
+@Service("BBSService")
 public class BBSServiceImpl implements BBSService {
-    @Autowired
     private BBSMapper bbsMapper;
-    @Override
+
+    @Autowired
+    public BBSServiceImpl(BBSMapper bbsMapper) {
+        this.bbsMapper = bbsMapper;
+    }
+
     public Collection<BBSPost> findAll() {
         return bbsMapper.findAll();
     }
 
-
-    @Override
     public void save(BBSPost bbsPost) {
         // TODO Auto-generated method stub
         bbsMapper.save(bbsPost);
     }
 
-    @Override
     public void saveReply(BBSReply bbsReply) {
         // TODO Auto-generated method stub
         bbsMapper.saveReply(bbsReply);
     }
 
-    @Override
     public void saveReplyReply(BBSReply bbsReply){
         bbsMapper.saveReplyReply(bbsReply);
     }
 
-    @Override
     public Collection<BBSPost> findBbsPostById(long id) {
             return bbsMapper.findBbsPostById(id);
     }
 
-    @Override
     public Collection<BBSReply> findBbsRepliesByPostId(long post_id) {
         return bbsMapper.findBbsRepliesByPostId(post_id);
     }
 
-    @Override
     public Collection<BBSReply> findBbsReplyReplies(long post_id, long reply_id) {
         return bbsMapper.findBbsReplyReplies(post_id, reply_id);
     }
 
-    @Override
     public String test(String name) {
         return "Hi " + name;
     }
